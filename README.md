@@ -1,5 +1,7 @@
 [![NPM Downloads](https://img.shields.io/npm/dm/logger-express)](https://www.npmjs.com/package/logger-express)
 
+⚠️ !new built-in feature, more information at the bottom of the page¡. ⚠️
+
 # logger-express
 
 A simple logger for Node and Express.
@@ -115,3 +117,26 @@ The logger will also log information to a file if the logToFile option is set to
   - magentaBright
   - cyanBright
   - whiteBright
+
+## Issues
+
+If you have any suggestions or want to report any errors, you can visit the project's home page.
+
+## New built-in feature
+
+This new version incorporates a new functionality for you to set a size for the log folder (this applies only if you have the logToFile option set to true). When the folder size exceeds the set limit, files will be deleted, leaving only the last 5 days of records. This cleanup will occur every 10 days. To add a size, you must include the sizeLogFile property and set the size in megabytes, as I will show you below.
+
+````
+const loggerOption = {
+  logToFile: true, // If you need to log information to a file
+  sizeLogFile: 5, // Set the size of the log folder in megabytes
+  colorize: true, // enable console colors
+  infoColor: "magenta", // set a color for information messages
+  errorColor: "red", // set a color for error messages:
+};
+````
+
+Note: the default size is 5 megabytes.
+
+
+https://github.com/FabianPinoP/logger-express-documentation
